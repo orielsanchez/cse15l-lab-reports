@@ -1,1 +1,1 @@
-[Week 1 - Remove Access and Filesystem](lab1.md)
+[Week 1 - Remote Access and Filesystem](lab1.md)
