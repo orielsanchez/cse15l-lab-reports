@@ -57,7 +57,7 @@ Finally the `mainString.toString()` method is ran to return a string of mainStri
 ## Part 2
 
 - The path to the private key for your SSH key for logging into ieng6 (on your computer or on the home directory of the lab computer):
-  ![image](./images/Screenshot%202023-10-18%20at%2010.59.41%20AM.png)
+  ![image](./images/Screenshot%202023-11-05%20at%202.41.54%20PM.png)
 
 - The path to the public key for your SSH key for logging into ieng6 (within your account on ieng6):
   ![image](./images/Screenshot%202023-10-18%20at%2011.01.03%20AM.png)
