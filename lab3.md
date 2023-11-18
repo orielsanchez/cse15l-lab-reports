@@ -2,6 +2,8 @@
 
 ## Part 1 - Bugs
 
+We exame the bug in the reverseInPlace method.
+
 ### JUnit Test of failure inducing input
 
 ```java
@@ -52,13 +54,15 @@ static int[] reversed(int[] arr) {
   }
 ```
 
-## Part 2 - Researching Commands - grep
+In the original Java code, a logic error occurs where the method, meant to reverse an array, mistakenly overwrites the elements of the input array `arr` with zeros from a new, uninitialized array `newArray`. The corrected version resolves this by properly reversing the array: it assigns the elements of `arr` into `newArray` in reverse order and returns `newArray`, thereby preserving the original array `arr` and accurately creating a reversed copy.
 
-All option descriptions come from "man grep".
+## Part 2 - Researching Commands - `grep`
 
-### command line option 1: grep -i
+All option descriptions come from `man grep`.
 
-Perform case insensitive matching. By default, grep is case sensitive.
+### command line option 1: `grep -i`
+
+The `grep -i` command in Unix/Linux is used for case-insensitive searching of a specified pattern within files. This option is useful because it allows the command to match the pattern regardless of case, making searches more flexible and comprehensive, especially in scenarios where the exact case of the text is unknown or varied.
 
 #### example 1:
 
@@ -90,9 +94,9 @@ Perform case insensitive matching. By default, grep is case sensitive.
 (base) oriel@Oriels-MacBook-Air docsearch %
 ```
 
-### command line option 2: grep -c
+### command line option 2: `grep -c`
 
-Only a count of selected lines is written to standard output
+The `grep -c` command in Unix/Linux counts the number of lines in a file that match a specified pattern. This functionality is useful for quickly determining the frequency of a pattern's occurrence in a file, which is particularly beneficial for analyzing and summarizing large datasets or logs.
 
 #### example 1
 
@@ -146,9 +150,9 @@ Only a count of selected lines is written to standard output
 (base) oriel@Oriels-MacBook-Air docsearch %
 ```
 
-### command line option 3: grep -I
+### command line option 3: `grep -I`
 
-Ignore binary files.
+The `grep -I` option in Unix/Linux is used to exclude binary files from a search, treating them as if they contain no matching lines. This is useful for focusing search results on text files and avoiding potential misinterpretations or garbled output that can occur when searching through binary files.Ignore binary files.
 
 #### example 1
 
@@ -197,9 +201,9 @@ Ignore binary files.
 (base) oriel@Oriels-MacBook-Air docsearch %
 ```
 
-### command line option 4: grep -n
+### command line option 4: `grep -n`
 
-Each output line is preceded by its relative line number in the file, starting at line 1. The line number counter is reset for each file processed. This option is ignored if -c, -L, -l, or -q is specified.
+The `grep -n` command in Unix/Linux adds line numbers to the output of a search, showing where each match is found within the file. This feature is particularly useful for pinpointing the exact location of matches, which is crucial for debugging, editing, or analyzing data within larger files.
 
 #### example 1
 
