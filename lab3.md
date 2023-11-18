@@ -60,145 +60,93 @@ In the original Java code, a logic error occurs where the method, meant to rever
 
 All option descriptions come from `man grep`.
 
-### command line option 1: `grep -i`
+### command line option 1: `grep -r`
+
+The `grep -r` command in Unix/Linux recursively searches for a specified pattern in all files within a given directory and its subdirectories. This feature is highly useful for comprehensive searches across multiple files and directories, particularly in large projects or complex directory structures, enabling efficient pattern finding without manually checking each file.
+
+#### example 1:
+
+```bash
+$ grep -r "legal aid lawyers" technical/
+
+technical/government/Media/RoanokeTimes.txt:Many viewed the early legal aid lawyers as "wild-eyed radicals,"
+technical/government/Media/RoanokeTimes.txt:In the 1960s, Harley said, legal aid lawyers were banned from
+```
+
+#### example 2:
+
+```bash
+$ grep -r "United States Congress" technical/
+
+technical/plos/pmed.0010060.txt:        September 2004, an AMA trustee testified in a United States Congressional hearing,
+technical/911report/preface.txt:                the President of the United States, the United States Congress, and the American
+technical/911report/chapter-1.txt:    Tuesday, September 11, 2001, dawned temperate and nearly cloudless in the eastern United States. Millions of men and women readied themselves for work. Some made their way to the Twin Towers, the signature structures of the World Trade Center complex in New York City. Others went to Arlington, Virginia, to the Pentagon. Across the Potomac River, the United States Congress was back in session. At the other end of Pennsylvania Avenue, people began to line up for a White House tour. In Sarasota, Florida, President George W. Bush went for an early morning run.
+technical/government/About_LSC/Strategic_report.txt:LSC is committed to providing the United States Congress and the
+```
+
+### command line option 2: `grep -i`
 
 The `grep -i` command in Unix/Linux is used for case-insensitive searching of a specified pattern within files. This option is useful because it allows the command to match the pattern regardless of case, making searches more flexible and comprehensive, especially in scenarios where the exact case of the text is unknown or varied.
 
 #### example 1:
 
-```zsh
-(base) oriel@Oriels-MacBook-Air docsearch % grep -i "junitcore" ./*.*
-./test.sh:java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnitCore TestDocSearch
-(base) oriel@Oriels-MacBook-Air docsearch %
+```bash
+$ grep -r -i "legal aid lawyers" technical/
+
+technical/government/Media/Anthem_Payout.txt:Legal aid lawyers in Kentucky have put together an action team
+technical/government/Media/NJ_Legal_Services.txt:Four former Passaic Legal Aid lawyers, who requested anonymity,
+technical/government/Media/Legal_Aid_in_Clay_County.txt:But even though Legal Aid lawyers provide legal services to
+technical/government/Media/Funding_cuts_force.txt:about 24,000 low-income people annually. Legal Aid lawyers help
+technical/government/Media/Marylands_Legal_Aid.txt:managing) attorneys around the state are former Legal Aid lawyers
+technical/government/Media/RoanokeTimes.txt:Many viewed the early legal aid lawyers as "wild-eyed radicals,"
+technical/government/Media/RoanokeTimes.txt:In the 1960s, Harley said, legal aid lawyers were banned from
+technical/government/About_LSC/reporting_system.txt:child care services. Legal aid lawyers and paralegals increasingly
+
 ```
 
-#### example 2
+#### example 2:
 
-```zsh
-(base) oriel@Oriels-MacBook-Air docsearch % grep -i "server" ./*.java
-./DocSearchServer.java:class DocSearchServer {
-./DocSearchServer.java:        Server.start(port, new Handler(args[1]));
-./Server.java:// A simple web server using Java's built-in HttpServer
-./Server.java:// Examples from https://dzone.com/articles/simple-http-server-in-java were useful references
-./Server.java:import com.sun.net.httpserver.HttpExchange;
-./Server.java:import com.sun.net.httpserver.HttpHandler;
-./Server.java:import com.sun.net.httpserver.HttpServer;
-./Server.java:class ServerHttpHandler implements HttpHandler {
-./Server.java:    ServerHttpHandler(URLHandler handler) {
-./Server.java:public class Server {
-./Server.java:        HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
-./Server.java:        server.createContext("/", new ServerHttpHandler(handler));
-./Server.java:        //start the server
-./Server.java:        server.start();
-./Server.java:        System.out.println("Server started at http://" + InetAddress.getLocalHost().getHostName() + ":" + port);
-(base) oriel@Oriels-MacBook-Air docsearch %
+```bash
+$ grep -r -i "united states congress" technical/
+
+technical/plos/pmed.0010060.txt:        September 2004, an AMA trustee testified in a United States Congressional hearing,
+technical/911report/preface.txt:                the President of the United States, the United States Congress, and the American
+technical/911report/chapter-1.txt:    Tuesday, September 11, 2001, dawned temperate and nearly cloudless in the eastern United States. Millions of men and women readied themselves for work. Some made their way to the Twin Towers, the signature structures of the World Trade Center complex in New York City. Others went to Arlington, Virginia, to the Pentagon. Across the Potomac River, the United States Congress was back in session. At the other end of Pennsylvania Avenue, people began to line up for a White House tour. In Sarasota, Florida, President George W. Bush went for an early morning run.
+technical/government/About_LSC/Strategic_report.txt:LSC is committed to providing the United States Congress and the
 ```
 
-### command line option 2: `grep -c`
+### command line option 3: `grep -c`
 
 The `grep -c` command in Unix/Linux counts the number of lines in a file that match a specified pattern. This functionality is useful for quickly determining the frequency of a pattern's occurrence in a file, which is particularly beneficial for analyzing and summarizing large datasets or logs.
 
 #### example 1
 
-```zsh
-(base) oriel@Oriels-MacBook-Air docsearch % grep -c "server" ./*.*
-./DocSearchServer.class:0
-./DocSearchServer.java:0
-./FileHelpers.class:0
-./Handler.class:0
-./README.md:0
-./Server.class:2
-./Server.java:9
-./ServerHttpHandler.class:2
-./TestDocSearch.class:0
-./TestDocSearch.java:0
-./URLHandler.class:0
-./biomed-sizes.txt:0
-./count-txts.sh:0
-./find-results.txt:0
-./grep-results.txt:0
-./plos-biomed-sizes.txt:0
-./plos-sizes.txt:0
-./start.sh:0
-./test.sh:0
-(base) oriel@Oriels-MacBook-Air docsearch %
+```bash
+$ grep -r -c "legal aid lawyers" technical/
+
+...
+technical/911report/chapter-8.txt:0
+technical/911report/chapter-5.txt:0
+technical/911report/preface.txt:1
+technical/911report/chapter-9.txt:0
+technical/911report/chapter-13.3.txt:0
+technical/911report/chapter-1.txt:1
+technical/911report/chapter-13.1.txt:0
+technical/911report/chapter-13.4.txt:0
+technical/911report/chapter-11.txt:0
+...
 ```
 
 #### example 2
 
-```zsh
-(base) oriel@Oriels-MacBook-Air docsearch % grep -c "test" ./*.*
-./DocSearchServer.class:0
-./DocSearchServer.java:0
-./FileHelpers.class:0
-./Handler.class:0
-./README.md:0
-./Server.class:0
-./Server.java:0
-./ServerHttpHandler.class:0
-./TestDocSearch.class:2
-./TestDocSearch.java:3
-./URLHandler.class:0
-./biomed-sizes.txt:0
-./count-txts.sh:0
-./find-results.txt:0
-./grep-results.txt:0
-./plos-biomed-sizes.txt:0
-./plos-sizes.txt:0
-./start.sh:0
-./test.sh:0
-(base) oriel@Oriels-MacBook-Air docsearch %
-```
+```bash
+$ grep -r -i -c "united states congress" technical/
 
-### command line option 3: `grep -I`
-
-The `grep -I` option in Unix/Linux is used to exclude binary files from a search, treating them as if they contain no matching lines. This is useful for focusing search results on text files and avoiding potential misinterpretations or garbled output that can occur when searching through binary files.Ignore binary files.
-
-#### example 1
-
-```zsh
-(base) oriel@Oriels-MacBook-Air docsearch % grep -I "server" ./*.*
-./Server.java:// A simple web server using Java's built-in HttpServer
-./Server.java:// Examples from https://dzone.com/articles/simple-http-server-in-java were useful references
-./Server.java:import com.sun.net.httpserver.HttpExchange;
-./Server.java:import com.sun.net.httpserver.HttpHandler;
-./Server.java:import com.sun.net.httpserver.HttpServer;
-./Server.java:        HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
-./Server.java:        server.createContext("/", new ServerHttpHandler(handler));
-./Server.java:        //start the server
-./Server.java:        server.start();
-(base) oriel@Oriels-MacBook-Air docsearch %
-```
-
-#### example 2
-
-```zsh
-(base) oriel@Oriels-MacBook-Air docsearch % grep -I "java" ./*.*
-./DocSearchServer.java:import java.io.File;
-./DocSearchServer.java:import java.io.IOException;
-./DocSearchServer.java:import java.net.URI;
-./DocSearchServer.java:import java.net.URISyntaxException;
-./DocSearchServer.java:import java.net.InetAddress;
-./DocSearchServer.java:import java.nio.file.Files;
-./DocSearchServer.java:import java.nio.file.Path;
-./DocSearchServer.java:import java.nio.file.Paths;
-./DocSearchServer.java:import java.util.ArrayList;
-./DocSearchServer.java:import java.util.List;
-./DocSearchServer.java:import java.util.Collections;
-./Server.java:// Examples from https://dzone.com/articles/simple-http-server-in-java were useful references
-./Server.java:import java.io.IOException;
-./Server.java:import java.io.OutputStream;
-./Server.java:import java.net.InetSocketAddress;
-./Server.java:import java.net.InetAddress;
-./Server.java:import java.net.URI;
-./TestDocSearch.java:import java.net.URI;
-./TestDocSearch.java:import java.net.URISyntaxException;
-./TestDocSearch.java:import java.io.IOException;
-./start.sh:javac Server.java DocSearchServer.java
-./start.sh:java DocSearchServer 4001 "./"
-./test.sh:javac -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar *.java
-./test.sh:java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnitCore TestDocSearch
-(base) oriel@Oriels-MacBook-Air docsearch %
+....
+technical/government/About_LSC/commission_report.txt:0
+technical/government/About_LSC/Strategic_report.txt:1
+technical/government/About_LSC/LegalServCorp_v_VelazquezOpinion.txt:0
+technical/government/About_LSC/Comments_on_semiannual.txt:0
 ```
 
 ### command line option 4: `grep -n`
@@ -207,27 +155,26 @@ The `grep -n` command in Unix/Linux adds line numbers to the output of a search,
 
 #### example 1
 
-```zsh
-(base) oriel@Oriels-MacBook-Air docsearch % grep -n "server" ./*.*
-Binary file ./Server.class matches
-./Server.java:1:// A simple web server using Java's built-in HttpServer
-./Server.java:3:// Examples from https://dzone.com/articles/simple-http-server-in-java were useful references
-./Server.java:11:import com.sun.net.httpserver.HttpExchange;
-./Server.java:12:import com.sun.net.httpserver.HttpHandler;
-./Server.java:13:import com.sun.net.httpserver.HttpServer;
-./Server.java:45:        HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
-./Server.java:48:        server.createContext("/", new ServerHttpHandler(handler));
-./Server.java:50:        //start the server
-./Server.java:51:        server.start();
-Binary file ./ServerHttpHandler.class matches
-(base) oriel@Oriels-MacBook-Air docsearch %
+```bash
+$ grep -r -i -n "legal aid lawyers" technical/
+
+technical/government/Media/Anthem_Payout.txt:30:Legal aid lawyers in Kentucky have put together an action team
+technical/government/Media/NJ_Legal_Services.txt:93:Four former Passaic Legal Aid lawyers, who requested anonymity,
+technical/government/Media/Legal_Aid_in_Clay_County.txt:13:But even though Legal Aid lawyers provide legal services to
+technical/government/Media/Funding_cuts_force.txt:11:about 24,000 low-income people annually. Legal Aid lawyers help
+technical/government/Media/Marylands_Legal_Aid.txt:70:managing) attorneys around the state are former Legal Aid lawyers
+technical/government/Media/RoanokeTimes.txt:29:Many viewed the early legal aid lawyers as "wild-eyed radicals,"
+technical/government/Media/RoanokeTimes.txt:42:In the 1960s, Harley said, legal aid lawyers were banned from
+technical/government/About_LSC/reporting_system.txt:208:child care services. Legal aid lawyers and paralegals increasingly
 ```
 
 #### example 2
 
-```zsh
-(base) oriel@Oriels-MacBook-Air docsearch % grep -n "main" ./*.*
-Binary file ./DocSearchServer.class matches
-./DocSearchServer.java:67:    public static void main(String[] args) throws IOException {
-(base) oriel@Oriels-MacBook-Air docsearch %
+```bash
+$ grep -r -i -n "united states congress" technical/
+
+technical/plos/pmed.0010060.txt:28:        September 2004, an AMA trustee testified in a United States Congressional hearing,
+technical/911report/preface.txt:6:                the President of the United States, the United States Congress, and the American
+technical/911report/chapter-1.txt:6:    Tuesday, September 11, 2001, dawned temperate and nearly cloudless in the eastern United States. Millions of men and women readied themselves for work. Some made their way to the Twin Towers, the signature structures of the World Trade Center complex in New York City. Others went to Arlington, Virginia, to the Pentagon. Across the Potomac River, the United States Congress was back in session. At the other end of Pennsylvania Avenue, people began to line up for a White House tour. In Sarasota, Florida, President George W. Bush went for an early morning run.
+technical/government/About_LSC/Strategic_report.txt:495:LSC is committed to providing the United States Congress and the
 ```
