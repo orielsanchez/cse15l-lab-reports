@@ -7,26 +7,27 @@ We exame the bug in the reverseInPlace method.
 ### JUnit Test of failure inducing input
 
 ```java
-@Test
-  public void testReversed2() {
-    int[] input1 = { 1 };
-    assertArrayEquals(new int[] { 1 }, ArrayExamples.reversed(input1));
+  @Test
+  public void testFailureInducing() {
+      int[] input1 = { 1 };
+      assertArrayEquals(new int[] { 1 }, ArrayExamples.reversed(input1));
   }
 ```
 
 ### JUnit Test of non-failure inducing input
 
 ```java
-@Test
-  public void testReversed() {
-    int[] input1 = {};
-    assertArrayEquals(new int[] {}, ArrayExamples.reversed(input1));
+  @Test
+  public void testNonFailureInducing() {
+    int[] input1 = { };
+    assertArrayEquals(new int[]{ }, ArrayExamples.reversed(input1));
   }
 ```
 
 ### The Symptom
 
-![symptom](./images/Screenshot%202023-10-30%20at%205.42.39%20PM.png)
+We can see the symptom of this bug by running these two JUnit tests:
+![symptom](./images/Screenshot%202023-11-18%20at%2012.48.04 PM.png)
 
 ### The Bug: Before and After
 
