@@ -5,5 +5,3 @@
 [Lab 3 - Bugs and Commands](lab3.md)
 
 [Lab 4 - Vim](lab4.md)
-
-[Lab 4 - Debuggers](lab4.md)
