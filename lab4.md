@@ -2,9 +2,11 @@
 
 ### Log into ieng6
 
-I typed `bash ieng6.sh<enter>`. I was automically logged in as I had already stored my public ssh key onto the ieng6 server.
+I opened up my terminal and typed `ssh cs15lfa23gu@ieng6.ucsd.edu<enter>`
 
-![ieng6.sh login](./images/Screenshot%202023-11-18%20at%202.34.20 PM.png)
+I was automically logged in as I had already stored my public ssh key onto the ieng6 server.
+
+![ieng6.sh login](./images/Screenshot%202023-11-29%20at%208.19.38 AM.png)
 
 ### Clone repo
 
@@ -35,6 +37,6 @@ I then typed `git add ListExamples.java<enter>` to stage the newly modified file
 After which I checked to make sure the status of my changes were what I wanted,
 by typing `git status<enter>`.
 After that I commited my changes by typing `git commit -m "test fix"<enter>`.
-Finally I pushed my changes to the remote git repo by typing `git push`.
+Finally I pushed my changes to the remote git repo by typing `git push<enter>`.
 
 ![commit and push](./images/Screenshot%202023-11-18%20at%204.24.04 PM.png)
