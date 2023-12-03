@@ -80,7 +80,7 @@ Changing the file path in `run.sh` from `../data.txt` to `./data.txt` seems to f
 
 - **Fix for the Bug:**
   - Change the file path in `run.sh` from `./data.txt` to `../data.txt`.
-    ![fixed run.sh](/debug_scenario/screenshots/Screenshot%202023-12-03%20at%2012.29.54 PM.png)
+    ![fixedrun.sh](/debug_scenario/screenshots/Screenshot%202023-12-03%20at%2012.29.54 PM.png)
 
 ## Part 2 - Reflection
 
