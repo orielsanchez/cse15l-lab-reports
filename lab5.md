@@ -53,6 +53,8 @@ It seems `data.txt` is not in the list. I guess it's not in the correct director
 
 Changing the file path in `run.sh` from `../data.txt` to `./data.txt` seems to fix this. Thank you!
 
+![success](./debug_scenario/screenshots/Screenshot%202023-12-03%20at%2012.28.33 PM.png)
+
 ---
 
 ### Debugging Information
@@ -82,7 +84,7 @@ Changing the file path in `run.sh` from `../data.txt` to `./data.txt` seems to f
 
   - Change the file path in `run.sh` from `./data.txt` to `../data.txt`.
 
-  ![fixedrun.sh](/debug_scenario/screenshots/Screenshot%202023-12-03%20at%2012.29.54 PM.png)
+  ![fixedrun.sh](./debug_scenario/screenshots/Screenshot%202023-12-03%20at%2012.29.54 PM.png)
 
 ## Part 2 - Reflection
 
